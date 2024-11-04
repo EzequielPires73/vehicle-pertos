@@ -1,27 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+    font-family: "Poppins", sans-serif !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.swiper {
+    overflow: visible !important; 
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+#gallery {
+    overflow: hidden !important; 
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.swiper-slide {
+    margin-right: 16px !important;
+} 
+.swiper-slide:last-child {
+    margin-right: 0px !important;
+} 
+
+#gallery .swiper-slide {
+    margin-right: 0px !important;
+}
+
+.swiper-button-prev, 
+.swiper-rtl .swiper-button-next, 
+.swiper-button-next, 
+.swiper-rtl .swiper-button-prev {
+    color: #fff !important;
+    background: #000;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 12px;
+}
+
+.swiper-button-prev::after, .swiper-button-next::after {
+    font-size: 20px !important;
+}
+
+.swiper-pagination-bullet {
+    background: #fff !important;
+}
+.swiper-pagination-bullet-active {
+    background: #fff !important;
 }
