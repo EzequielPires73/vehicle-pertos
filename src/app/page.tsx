@@ -20,6 +20,31 @@ export default async function Home() {
       <Header />
       <BannerHome brands={brands} />
       <ListVehicles />
+      <div className="w-full max-w-7xl mx-auto px-4 py-8 gap-6 flex flex-col">
+        <h2 className="text-xl font-medium flex-1">Por que nos escolher?</h2>
+        <div className="w-full grid grid-cols-4 gap-4">
+          <div className="flex flex-col gap-1">
+            <Image src={'/f1.svg'} alt="" width={48} height={48}/>
+            <h4 className="font-medium text-lg">Ofertas Especiais de Financiamento</h4>
+            <p className="text-sm">Our stress-free finance department that can find financial solutions to save you money.</p>
+          </div>
+          <div className="flex flex-col gap-1">
+            <Image src={'/f2.svg'} alt="" width={48} height={48}/>
+            <h4 className="font-medium text-lg">Concessionárias de automóveis confiáveis</h4>
+            <p className="text-sm">Our stress-free finance department that can find financial solutions to save you money.</p>
+          </div>
+          <div className="flex flex-col gap-1">
+            <Image src={'/f3.svg'} alt="" width={48} height={48}/>
+            <h4 className="font-medium text-lg">Preços transparentes e competitivos</h4>
+            <p className="text-sm">Our stress-free finance department that can find financial solutions to save you money.</p>
+          </div>
+          <div className="flex flex-col gap-1">
+            <Image src={'/f4.svg'} alt="" width={48} height={48}/>
+            <h4 className="font-medium text-lg">Serviço especializado em automóveis</h4>
+            <p className="text-sm">Our stress-free finance department that can find financial solutions to save you money.</p>
+          </div>
+        </div>
+      </div>
       <ListPopularMakes />
       <ListBrands />
       <div className="w-full max-w-7xl mx-auto px-4 pt-16 pb-8 grid lg:grid-cols-2 gap-4">
