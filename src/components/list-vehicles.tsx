@@ -45,7 +45,7 @@ const vehicles = [
 export function ListVehicles() {
     return (
         <div className="overflow-hidden">
-            <div className="w-full max-w-7xl mx-auto px-4 pt-16 pb-8 flex flex-col gap-4">
+            <div className="w-full  mx-auto px-4 pt-16 pb-8 flex flex-col gap-4">
                 <div className="flex justify-between items-center">
                     <h2 className="text-xl font-medium flex-1">Explorar todos os veículos</h2>
                     <Link className="text-sm font-medium" href={'/'}>Ver todos</Link>

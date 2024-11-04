@@ -12,8 +12,8 @@ export default async function Page() {
     return (
         <div>
             <header
-                className={`py-4 flex items-center w-full transition-colors duration-300 border-b`}>
-                <nav className="px-8 flex gap-8 w-full">
+                className={`h-20 py-4 flex items-center w-full transition-colors duration-300 border-b`}>
+                <nav className="px-4 flex gap-8 w-full">
                     <Link href={'/'}><Image src={'/logo-dark.svg'} alt="Logo" width={108} height={26} /></Link>
                 </nav>
             </header>

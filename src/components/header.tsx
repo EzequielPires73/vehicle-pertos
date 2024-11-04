@@ -27,7 +27,7 @@ export function Header({fill}: {fill?: boolean}) {
                 className={`fixed z-50 flex items-center w-full ${fill ? 'bg-card' : isTop ? "bg-transparent" : "bg-white shadow-lg"
                     } transition-colors duration-300`}
             >
-                <nav className="px-4 flex gap-8 w-full max-w-7xl mx-auto max-xl:bg-white py-3 h-20 justify-between">
+                <nav className="px-4 flex gap-8 w-full max-xl:bg-white py-3 h-20 justify-between">
                     <Link href={'/'} className="flex">
                     <Image src={isTop || fill ? '/logo.svg' : '/logo-dark.svg'} alt="Logo" width={108} height={26} className="hidden lg:flex" />
                     <Image src={'/logo-dark.svg'} alt="Logo" width={108} height={26} className="lg:hidden flex" />

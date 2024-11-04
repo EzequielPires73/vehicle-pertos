@@ -20,7 +20,7 @@ export default async function Home() {
       <Header />
       <BannerHome brands={brands} />
       <ListVehicles />
-      <div className="w-full max-w-7xl mx-auto px-4 py-8 gap-6 flex flex-col">
+      <div className="w-full mx-auto px-4 py-8 gap-6 flex flex-col">
         <h2 className="text-xl font-medium flex-1">Por que nos escolher?</h2>
         <div className="w-full grid grid-cols-4 gap-4">
           <div className="flex flex-col gap-1">

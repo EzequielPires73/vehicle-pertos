@@ -45,7 +45,7 @@ const vehicles = [
 export function ListPopularMakes() {
     return (
         <div className="mt-8 bg-section overflow-hidden">
-            <div className="w-full max-w-7xl mx-auto px-4 py-16 flex flex-col gap-4">
+            <div className="w-full  mx-auto px-4 py-16 flex flex-col gap-4">
                 <div className="flex justify-between items-center">
                     <h2 className="text-xl font-medium text-white">Marcas populares</h2>
                     <Link className="text-sm font-medium text-white" href={'/'}>Ver todos</Link>
