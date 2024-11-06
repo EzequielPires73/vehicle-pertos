@@ -25,11 +25,11 @@ export const Button = ({ title, icon, full, href, loading, buttonType, small, me
     `;
 
     const primaryStyles = `
-        bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white
+        bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 text-white
     `;
 
     const secondaryStyles = `
-        bg-gray-600 hover:bg-gray-700 active:bg-gray-800 text-white
+        bg-card hover:bg-card active:bg-card text-white
     `;
 
     const outlinedStyles = `

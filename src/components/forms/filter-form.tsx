@@ -1,16 +1,23 @@
 'use client'
 
 import Link from "next/link";
-import { SelectField } from "../ui/select";
+import { OptionType, SelectField } from "../ui/select";
 import { IBrand } from "@/interfaces/brand.interface";
 import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
 import { IModel } from "@/interfaces/model.interface";
 import { FiSearch } from "react-icons/fi";
 
+interface IFilter {
+    brand: OptionType;
+    condition: number;
+    model: OptionType;
+}
+
 export function FilterForm({brands}: {brands: IBrand[]}) {
-    const { control, watch, setValue, } = useForm();
+    const { control, watch, setValue, handleSubmit } = useForm<IFilter>({defaultValues: {condition: 0}});
     const brand = watch('brand');
+    const condition = watch('condition');
     const [models, setModels] = useState<IModel[]>([]);
 
     useEffect(() => {
@@ -20,12 +27,16 @@ export function FilterForm({brands}: {brands: IBrand[]}) {
         setValue('model', null);
     }, [brand]);
 
+    const onSubmit = (data) => {
+        console.log(data);
+    }
+
     return (
-        <form className="flex flex-col gap-4">
+        <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
             <div className="mt-8 flex gap-4">
-                <button className="px-2 border-b-2 pb-1 text-white border-white font-semibold">Todos</button>
-                <button className="px-2 border-b-2 pb-1 text-white/90 border-transparent">Novos</button>
-                <button className="px-2 border-b-2 pb-1 text-white/90 border-transparent">Seminovos</button>
+                <button type="button" className={`px-2 border-b-2 pb-1 ${condition == 0 ? 'text-white border-white font-semibold' : 'px-2 border-b-2 pb-1 text-white/90 border-transparent'}`} onClick={() => setValue('condition', 0)}>Todos</button>
+                <button type="button" className={`px-2 border-b-2 pb-1 ${condition == 1 ? 'text-white border-white font-semibold' : 'px-2 border-b-2 pb-1 text-white/90 border-transparent'}`} onClick={() => setValue('condition', 1)}>Novos</button>
+                <button type="button" className={`px-2 border-b-2 pb-1 ${condition == 2 ? 'text-white border-white font-semibold' : 'px-2 border-b-2 pb-1 text-white/90 border-transparent'}`} onClick={() => setValue('condition', 2)}>Seminovos</button>
             </div>
             <div className="bg-white w-full max-w-4xl rounded-xl p-2 flex flex-wrap text-black">
                 <div className="flex-1 xl:border-r">
@@ -46,7 +57,7 @@ export function FilterForm({brands}: {brands: IBrand[]}) {
                         options={models.map(item => ({ value: item.id, label: item.name }))}
                     />
                 </div>
-                <Link href={'/buscar'} className="max-xl:w-full xl:ml-3 px-6 bg-blue-800 hover:bg-blue-900 transition-all text-white h-12 flex items-center justify-center gap-4 rounded-xl font-medium"><FiSearch /> Buscar veículo</Link>
+                <Link href={'/buscar'} className="max-xl:w-full xl:ml-3 px-6 bg-indigo-500 hover:bg-indigo-600 transition-all text-white h-12 flex items-center justify-center gap-4 rounded-xl font-medium"><FiSearch /> Buscar veículo</Link>
             </div>
         </form>
     )

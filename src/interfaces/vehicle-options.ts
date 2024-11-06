@@ -7,5 +7,9 @@ export interface IVehicleOptions {
     sellerTypes: Array<string>,
     carConditions: Array<string>,
     optionalFeatures: Array<string>,
+    interiorFeatures: Array<string>,
+    exteriorFeatures: Array<string>,
+    safetyFeatures: Array<string>,
+    comfortFeatures: Array<string>,
     years: Array<string>,
 }

@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="mt-8 bg-section pt-8 px-4 pb-4">
       <div className="mb-10 border-b border-white/20 pb-4">
         <div className="flex flex-col gap-2">
-          <Image src={'/logo.svg'} alt="Logo" width={108} height={26} />
+          <Image src={'/logo.svg'} alt="Logo" width={300} height={26} />
           <span className="text-xs font-light text-white/90">Receba atualizações de preços, dicas de compras e muito mais!</span>
         </div>
       </div>

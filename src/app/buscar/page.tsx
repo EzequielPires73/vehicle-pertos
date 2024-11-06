@@ -1,4 +1,5 @@
 import { CardVehicle } from "@/components/card-vehicle";
+import { Footer } from "@/components/footer";
 import { FilterForm } from "@/components/forms/filter-form";
 import { Header } from "@/components/header";
 import { SelectField } from "@/components/ui/select";
@@ -143,6 +144,7 @@ export default async function Page() {
                     {vehicles.map(item => <CardVehicle {...item} />)}
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }

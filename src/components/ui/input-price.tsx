@@ -38,7 +38,7 @@ const InputPrice = forwardRef<HTMLInputElement, Props>(({ label, name, error, ty
                     name={name}
                     type={type}
                     placeholder="0,00"
-                    className={`h-12 w-full px-3 pl-8 rounded-lg border border-gray-200 outline-none text-sm ${error ? 'border-red-500' : 'focus:border-gray-500 hover:border-gray-500'}`}
+                    className={`h-12 w-full px-3 pl-8 rounded-lg border border-gray-300 outline-none text-sm ${error ? 'border-red-500' : 'focus:border-gray-500 hover:border-gray-500'}`}
                     {...rest}
                     onChange={handleChange}
                 />

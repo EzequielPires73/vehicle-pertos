@@ -29,7 +29,7 @@ export function Header({fill}: {fill?: boolean}) {
             >
                 <nav className="px-4 flex gap-8 w-full max-xl:bg-white py-3 h-20 justify-between">
                     <Link href={'/'} className="flex">
-                    <Image src={isTop || fill ? '/logo.svg' : '/logo-dark.svg'} alt="Logo" width={108} height={26} className="hidden lg:flex" />
+                    <Image src={isTop || fill ? '/logo.svg' : '/logo-dark.svg'} alt="Logo" width={300} height={26} className="hidden lg:flex" />
                     <Image src={'/logo-dark.svg'} alt="Logo" width={108} height={26} className="lg:hidden flex" />
                     </Link>
                     <button className="hidden max-xl:flex"><FiMenu size={32} /></button>
@@ -39,7 +39,7 @@ export function Header({fill}: {fill?: boolean}) {
                         <li><Link href={'/'} className={`${isTop || fill ? 'text-white/80' : 'text-black/80'}`}>Contato</Link></li>
                         <div className="ml-12 flex items-center gap-4">
                             <li><Link href={'/entrar'}>Entrar</Link></li>
-                            <li><Link href={'/anunciar-veiculo'} className={`px-6 ${isTop || fill ? 'bg-white hover:bg-white/90' : 'bg-blue-950 text-white'} transition-all text-black h-12 flex items-center rounded-xl font-medium`}>Anunciar veículo</Link></li>
+                            <li><Link href={'/anunciar-veiculo'} className={`px-6 ${isTop || fill ? 'bg-white hover:bg-white/90' : 'bg-indigo-500 text-white'} transition-all text-black h-12 flex items-center rounded-xl font-medium`}>Anunciar veículo</Link></li>
                         </div>
                     </ul>
                 </nav>

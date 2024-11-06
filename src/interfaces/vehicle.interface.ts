@@ -7,6 +7,7 @@ export interface IVehicle {
     category: string;
     color: string;
     fuelType: string;
+    version: string;
     transmissionType: string;
     sellerType?: string;
     condition: string;
@@ -15,7 +16,11 @@ export interface IVehicle {
     model: IModel;
     brand: IBrand;
     modelYear?: number;
-    manufactureYear?: number; 
+    manufactureYear?: number;
     price?: number;
     mileage?: number; 
+    interiorFeatures: Array<String>,
+    exteriorFeatures: Array<String>,
+    safetyFeatures: Array<String>,
+    comfortFeatures: Array<String>,
 }

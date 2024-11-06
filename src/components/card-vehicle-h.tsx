@@ -29,7 +29,7 @@ export function CardVehicleH({brand, model, version, image}) {
                 </div>
                 <div className="mt-3 pt-3 border-t border-white/10 flex justify-between items-center">
                   <strong className="text-lg font-medium">R$ 22.000</strong>
-                  <Link href={'/'} className="text-sm font-medium text-white flex items-center gap-2">Ver detalhes<FiArrowUpRight size={20} /></Link>
+                  <Link href={'/comprar/volkswagen/gol/123'} className="text-sm font-medium text-white flex items-center gap-2">Ver detalhes<FiArrowUpRight size={20} /></Link>
                 </div>
               </div>
             </div>

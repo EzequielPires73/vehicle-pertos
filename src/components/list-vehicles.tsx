@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { CardVehicle } from "./card-vehicle"
+import { IVehicle } from "@/interfaces/vehicle.interface"
 
 const vehicles = [
     {
@@ -42,7 +43,7 @@ const vehicles = [
     },
 ]
 
-export function ListVehicles() {
+export function ListVehicles({vehicles}: {vehicles: IVehicle[]}) {
     return (
         <div className="overflow-hidden">
             <div className="w-full  mx-auto px-4 pt-16 pb-8 flex flex-col gap-4">
@@ -56,7 +57,7 @@ export function ListVehicles() {
                     <button className="px-2 py-1 text-sm border-b-2 border-transparent">Usados</button>
                 </div>
                 <Swiper className="w-full overflow-visible" slidesPerView={'auto'}>
-                    {vehicles.map(item => <SwiperSlide className="max-w-80"><CardVehicle {...item} /></SwiperSlide>)}
+                    {vehicles.map(item => <SwiperSlide className="max-w-80"><CardVehicle vehicle={item} /></SwiperSlide>)}
                 </Swiper>
             </div>
         </div>

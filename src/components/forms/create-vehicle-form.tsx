@@ -8,9 +8,12 @@ import { IBrand, VehicleType } from "@/interfaces/brand.interface";
 import { IModel } from "@/interfaces/model.interface";
 import { IVehicleOptions } from "@/interfaces/vehicle-options";
 import { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
+import { useFieldArray, useForm } from "react-hook-form";
 import { FiArrowLeft } from "react-icons/fi";
 import { InputPrice } from "../ui/input-price";
+import { Label } from "../ui/label";
+import { GridSelect } from "../ui/grid-select";
+import { toNumber } from "@/helpers/mask";
 
 interface IVehicleForm {
     category: OptionType;
@@ -24,7 +27,11 @@ interface IVehicleForm {
     manufactureYear: OptionType;
     transmissionType: OptionType;
     price?: number;
-    mileage?: number; 
+    mileage?: number;
+    interiorFeatures: Array<String>,
+    exteriorFeatures: Array<String>,
+    safetyFeatures: Array<String>,
+    comfortFeatures: Array<String>,
 }
 
 export function CreateVehicleForm({ brands, options }: { brands: IBrand[], options: IVehicleOptions }) {
@@ -49,7 +56,8 @@ export function CreateVehicleForm({ brands, options }: { brands: IBrand[], optio
     }, [modelYear]);
 
     const onSubmit = (data: IVehicleForm) => {
-        const {models, ...brand} = brands.find(item => item.id == data.brand.value);
+        const { models, ...brand } = brands.find(item => item.id == data.brand.value);
+        console.log(toNumber(data.price.toString()));
         const res = addVehicle({
             brand: brand,
             model: models.find(item => item.id == data.model.value),
@@ -59,6 +67,15 @@ export function CreateVehicleForm({ brands, options }: { brands: IBrand[], optio
             fuelType: data.fuelType.label,
             transmissionType: data.transmissionType.label,
             type: VehicleType.car,
+            version: data.version,
+            modelYear: +data.modelYear.label,
+            manufactureYear: +data.manufactureYear.label,
+            price: toNumber(data.price.toString()),
+            mileage: data.mileage,
+            interiorFeatures: data.interiorFeatures,
+            exteriorFeatures: data.exteriorFeatures,
+            safetyFeatures: data.safetyFeatures,
+            comfortFeatures: data.comfortFeatures,
         });
 
         console.log(res);
@@ -66,61 +83,58 @@ export function CreateVehicleForm({ brands, options }: { brands: IBrand[], optio
 
     return (
         <form className="w-full max-w-xl mx-auto flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
-            <SelectField
-                control={control}
-                label="Marca"
-                name="brand"
-                placeholder="Selecione uma marca"
-                options={brands.map(item => ({ value: item.id, label: item.name }))}
-                error={errors?.brand?.message}
-                rules={{ required: 'Esse campo é obrigatório.' }}
-            />
-            <SelectField
-                control={control}
-                name="model"
-                label="Modelo"
-                placeholder="Selecione um modelo"
-                options={models.map(item => ({ value: item.id, label: item.name }))}
-                error={errors?.model?.message}
-                rules={{ required: 'Esse campo é obrigatório.' }}
-            />
-            <div className="flex gap-4 w-full">
-                <div className="flex-1">
-                    <SelectField
-                        control={control}
-                        name="modelYear"
-                        label="Ano do Modelo"
-                        options={options.years.map(item => ({ value: item, label: item }))}
-                        error={errors?.modelYear?.message}
-                        rules={{ required: 'Esse campo é obrigatório.' }}
-                    />
-                </div>
-                <div className="flex-1">
-                    <SelectField
-                        control={control}
-                        name="manufactureYear"
-                        label="Ano de Fabricação"
-                        options={manufactureYears.map(item => ({ value: item, label: item }))}
-                        error={errors?.manufactureYear?.message}
-                        rules={{ required: 'Esse campo é obrigatório.' }}
-                    />
-                </div>
+            <div className="grid grid-cols-2 gap-4">
+                <SelectField
+                    control={control}
+                    label="Marca"
+                    name="brand"
+                    placeholder="Selecione uma marca"
+                    options={brands.map(item => ({ value: item.id, label: item.name }))}
+                    error={errors?.brand?.message}
+                    rules={{ required: 'Esse campo é obrigatório.' }}
+                />
+                <SelectField
+                    control={control}
+                    name="model"
+                    label="Modelo"
+                    placeholder="Selecione um modelo"
+                    options={models.map(item => ({ value: item.id, label: item.name }))}
+                    error={errors?.model?.message}
+                    rules={{ required: 'Esse campo é obrigatório.' }}
+                />
+                <SelectField
+                    control={control}
+                    name="modelYear"
+                    label="Ano do Modelo"
+                    options={options.years.map(item => ({ value: item, label: item }))}
+                    error={errors?.modelYear?.message}
+                    rules={{ required: 'Esse campo é obrigatório.' }}
+                />
+                <SelectField
+                    control={control}
+                    name="manufactureYear"
+                    label="Ano de Fabricação"
+                    options={manufactureYears.map(item => ({ value: item, label: item }))}
+                    error={errors?.manufactureYear?.message}
+                    rules={{ required: 'Esse campo é obrigatório.' }}
+                />
+                <Input
+                    label="Versão"
+                    placeholder="Insira a versão do veículo"
+                    error={errors?.version?.message}
+                    {...register('version', { required: 'Esse campo é obrigatório.' })}
+                />
+                <SelectField
+                    control={control}
+                    name="color"
+                    label="Cor"
+                    placeholder="Selecione a cor do veículo"
+                    options={options.colors.map((item) => ({ value: item, label: item }))}
+                    error={errors?.color?.message}
+                    rules={{ required: 'Esse campo é obrigatório.' }}
+                />
+
             </div>
-            <Input
-                label="Versão"
-                placeholder="Insira a versão do veículo"
-                error={errors?.version?.message}
-                {...register('version', { required: 'Esse campo é obrigatório.' })}
-            />
-            <SelectField
-                control={control}
-                name="color"
-                label="Cor"
-                placeholder="Selecione a cor do veículo"
-                options={options.colors.map((item) => ({ value: item, label: item }))}
-                error={errors?.color?.message}
-                rules={{ required: 'Esse campo é obrigatório.' }}
-            />
             <div className="flex gap-4">
                 <div className="flex-1">
                     <SelectField
@@ -189,6 +203,30 @@ export function CreateVehicleForm({ brands, options }: { brands: IBrand[], optio
                     />
                 </div>
             </div>
+            <GridSelect
+                control={control}
+                name="interiorFeatures"
+                label="Características do Interior"
+                options={options.interiorFeatures}
+            />
+            <GridSelect
+                control={control}
+                name="safetyFeatures"
+                label="Características de Segurança"
+                options={options.safetyFeatures}
+            />
+            <GridSelect
+                control={control}
+                name="exteriorFeatures"
+                label="Características Externas"
+                options={options.exteriorFeatures}
+            />
+            <GridSelect
+                control={control}
+                name="comfortFeatures"
+                label="Características de Conforto e Conveniência"
+                options={options.comfortFeatures}
+            />
             <div className="flex justify-between items-center">
                 <Button title="Voltar" icon={<FiArrowLeft />} buttonType="text" />
                 <Button title="Continuar" />

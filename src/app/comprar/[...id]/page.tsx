@@ -22,16 +22,16 @@ export default function Page() {
                     /
                     <li><Link href={''}>Gol</Link></li>
                 </ul>
-                <h1 className="text-4xl font-medium text-gray-800 mt-2">VOLKSWAGEN <span className="text-blue-500">GOL</span></h1>
+                <h1 className="text-4xl font-medium text-gray-800 mt-2">VOLKSWAGEN <span className="text-indigo-500">GOL</span></h1>
                 <span className="text-sm">1.0 12V MPI TOTALFLEX 4P MANUAL</span>
                 <div className="flex justify-between my-6">
                     <ul className="flex gap-2">
-                        <li className="flex gap-2 px-4 bg-blue-100 py-2 rounded-xl text-blue-500 text-sm items-center font-medium"><Image src={'/year.svg'} alt="" width={16} height={16} /> <span>2020</span></li>
-                        <li className="flex gap-2 px-4 bg-blue-100 py-2 rounded-xl text-blue-500 text-sm items-center font-medium"><Image src={'/mileage-blue.svg'} alt="" width={16} height={16} /> <span>120.000</span></li>
-                        <li className="flex gap-2 px-4 bg-blue-100 py-2 rounded-xl text-blue-500 text-sm items-center font-medium"><Image src={'/cambio-blue.svg'} alt="" width={16} height={16} /> <span>Manual</span></li>
-                        <li className="flex gap-2 px-4 bg-blue-100 py-2 rounded-xl text-blue-500 text-sm items-center font-medium"><Image src={'/fuel-blue.svg'} alt="" width={16} height={16} /> <span>Gasolina e alcool</span></li>
+                        <li className="flex gap-2 px-4 bg-indigo-100 py-2 rounded-xl text-indigo-500 text-sm items-center font-medium"><Image src={'/year.svg'} alt="" width={16} height={16} /> <span>2020</span></li>
+                        <li className="flex gap-2 px-4 bg-indigo-100 py-2 rounded-xl text-indigo-500 text-sm items-center font-medium"><Image src={'/mileage-blue.svg'} alt="" width={16} height={16} /> <span>120.000</span></li>
+                        <li className="flex gap-2 px-4 bg-indigo-100 py-2 rounded-xl text-indigo-500 text-sm items-center font-medium"><Image src={'/cambio-blue.svg'} alt="" width={16} height={16} /> <span>Manual</span></li>
+                        <li className="flex gap-2 px-4 bg-indigo-100 py-2 rounded-xl text-indigo-500 text-sm items-center font-medium"><Image src={'/fuel-blue.svg'} alt="" width={16} height={16} /> <span>Gasolina e alcool</span></li>
                     </ul>
-                    <button className="flex gap-2 px-4 bg-blue-500 py-2 rounded-xl text-white text-sm items-center font-medium"><FiShare />Compartilhar</button>
+                    <button className="flex gap-2 px-4 bg-indigo-500 py-2 rounded-xl text-white text-sm items-center font-medium"><FiShare />Compartilhar</button>
                 </div>
                 <div className="grid grid-cols-12 gap-8 pb-10">
                     <div className="col-span-8 flex flex-col gap-8">
@@ -50,84 +50,84 @@ export default function Page() {
                                         <Image src={'/body.svg'} alt="" width={20} height={20} />
                                         <span className="text-xs font-medium">Carroceria</span>
                                     </div>
-                                    <span className="text-xs font-medium text-blue-500">Sedan</span>
+                                    <span className="text-xs font-medium text-indigo-500">Sedan</span>
                                 </div>
                                 <div className="grid grid-cols-2">
                                     <div className="flex gap-2 items-center">
                                         <Image src={'/condition.svg'} alt="" width={20} height={20} />
                                         <span className="text-xs font-medium">Condição</span>
                                     </div>
-                                    <span className="text-xs font-medium text-blue-500">Usado</span>
+                                    <span className="text-xs font-medium text-indigo-500">Usado</span>
                                 </div>
                                 <div className="grid grid-cols-2">
                                     <div className="flex gap-2 items-center">
                                         <Image src={'/mileage.svg'} alt="" width={20} height={20} />
                                         <span className="text-xs font-medium">Quilometragem</span>
                                     </div>
-                                    <span className="text-xs font-medium text-blue-500">120 km</span>
+                                    <span className="text-xs font-medium text-indigo-500">120 km</span>
                                 </div>
                                 <div className="grid grid-cols-2">
                                     <div className="flex gap-2 items-center">
                                         <Image src={'/engine.svg'} alt="" width={20} height={20} />
                                         <span className="text-xs font-medium">Motor</span>
                                     </div>
-                                    <span className="text-xs font-medium text-blue-500">1.0</span>
+                                    <span className="text-xs font-medium text-indigo-500">1.0</span>
                                 </div>
                                 <div className="grid grid-cols-2">
                                     <div className="flex gap-2 items-center">
                                         <Image src={'/fuel.svg'} alt="" width={20} height={20} />
                                         <span className="text-xs font-medium">Combustível</span>
                                     </div>
-                                    <span className="text-xs font-medium text-blue-500">Gasolina</span>
+                                    <span className="text-xs font-medium text-indigo-500">Gasolina</span>
                                 </div>
                                 <div className="grid grid-cols-2">
                                     <div className="flex gap-2 items-center">
                                         <Image src={'/door.svg'} alt="" width={20} height={20} />
                                         <span className="text-xs font-medium">Portas</span>
                                     </div>
-                                    <span className="text-xs font-medium text-blue-500">4 Portas</span>
+                                    <span className="text-xs font-medium text-indigo-500">4 Portas</span>
                                 </div>
                                 <div className="grid grid-cols-2">
                                     <div className="flex gap-2 items-center">
                                         <Image src={'/engine.svg'} alt="" width={20} height={20} />
                                         <span className="text-xs font-medium">Ano</span>
                                     </div>
-                                    <span className="text-xs font-medium text-blue-500">2020</span>
+                                    <span className="text-xs font-medium text-indigo-500">2020</span>
                                 </div>
                                 <div className="grid grid-cols-2">
                                     <div className="flex gap-2 items-center">
                                         <Image src={'/cylinder.svg'} alt="" width={20} height={20} />
                                         <span className="text-xs font-medium">Cilindros</span>
                                     </div>
-                                    <span className="text-xs font-medium text-blue-500">4</span>
+                                    <span className="text-xs font-medium text-indigo-500">4</span>
                                 </div>
                                 <div className="grid grid-cols-2">
                                     <div className="flex gap-2 items-center">
                                         <Image src={'/cambio.svg'} alt="" width={20} height={20} />
                                         <span className="text-xs font-medium">Câmbio</span>
                                     </div>
-                                    <span className="text-xs font-medium text-blue-500">Manual</span>
+                                    <span className="text-xs font-medium text-indigo-500">Manual</span>
                                 </div>
                                 <div className="grid grid-cols-2">
                                     <div className="flex gap-2 items-center">
                                         <Image src={'/color.svg'} alt="" width={20} height={20} />
                                         <span className="text-xs font-medium">Cor</span>
                                     </div>
-                                    <span className="text-xs font-medium text-blue-500">Branco</span>
+                                    <span className="text-xs font-medium text-indigo-500">Branco</span>
                                 </div>
                                 <div className="grid grid-cols-2">
                                     <div className="flex gap-2 items-center">
                                         <Image src={'/drive.svg'} alt="" width={20} height={20} />
                                         <span className="text-xs font-medium">Direção</span>
                                     </div>
-                                    <span className="text-xs font-medium text-blue-500">Elétrica</span>
+                                    <span className="text-xs font-medium text-indigo-500">Elétrica</span>
                                 </div>
                                 <div className="grid grid-cols-2">
                                     <div className="flex gap-2 items-center">
                                         <FiRepeat />
                                         <span className="text-xs font-medium">Aceita troca</span>
                                     </div>
-                                    <span className="text-xs font-medium text-blue-500">Sim</span>
+                                    <span className="text-xs font-medium text-indigo-500">Sim</span>
                                 </div>
                             </div>
                         </div>
@@ -138,38 +138,38 @@ export default function Page() {
                                     <h4 className="text-sm font-medium">Interior</h4>
                                     <ul className="flex flex-col gap-3">
                                         <li className="flex gap-2 items-center">
-                                            <div className="bg-blue-100 w-5 h-5 rounded-full flex items-center justify-center">
-                                                <FiCheck size={14} className="text-blue-500" />
+                                            <div className="bg-indigo-100 w-5 h-5 rounded-full flex items-center justify-center">
+                                                <FiCheck size={14} className="text-indigo-500" />
                                             </div>
                                             <span className="text-xs">Ar Condicionado</span>
                                         </li>
                                         <li className="flex gap-2 items-center">
-                                            <div className="bg-blue-100 w-5 h-5 rounded-full flex items-center justify-center">
-                                                <FiCheck size={14} className="text-blue-500" />
+                                            <div className="bg-indigo-100 w-5 h-5 rounded-full flex items-center justify-center">
+                                                <FiCheck size={14} className="text-indigo-500" />
                                             </div>
                                             <span className="text-xs">Odômetro digital</span>
                                         </li>
                                         <li className="flex gap-2 items-center">
-                                            <div className="bg-blue-100 w-5 h-5 rounded-full flex items-center justify-center">
-                                                <FiCheck size={14} className="text-blue-500" />
+                                            <div className="bg-indigo-100 w-5 h-5 rounded-full flex items-center justify-center">
+                                                <FiCheck size={14} className="text-indigo-500" />
                                             </div>
                                             <span className="text-xs">Aquecedor</span>
                                         </li>
                                         <li className="flex gap-2 items-center">
-                                            <div className="bg-blue-100 w-5 h-5 rounded-full flex items-center justify-center">
-                                                <FiCheck size={14} className="text-blue-500" />
+                                            <div className="bg-indigo-100 w-5 h-5 rounded-full flex items-center justify-center">
+                                                <FiCheck size={14} className="text-indigo-500" />
                                             </div>
                                             <span className="text-xs">Assentos de couro</span>
                                         </li>
                                         <li className="flex gap-2 items-center">
-                                            <div className="bg-blue-100 w-5 h-5 rounded-full flex items-center justify-center">
-                                                <FiCheck size={14} className="text-blue-500" />
+                                            <div className="bg-indigo-100 w-5 h-5 rounded-full flex items-center justify-center">
+                                                <FiCheck size={14} className="text-indigo-500" />
                                             </div>
                                             <span className="text-xs">Teto solar panorâmico</span>
                                         </li>
                                         <li className="flex gap-2 items-center">
-                                            <div className="bg-blue-100 w-5 h-5 rounded-full flex items-center justify-center">
-                                                <FiCheck size={14} className="text-blue-500" />
+                                            <div className="bg-indigo-100 w-5 h-5 rounded-full flex items-center justify-center">
+                                                <FiCheck size={14} className="text-indigo-500" />
                                             </div>
                                             <span className="text-xs">Tacômetro</span>
                                         </li>
@@ -179,38 +179,38 @@ export default function Page() {
                                     <h4 className="text-sm font-medium">Segurança</h4>
                                     <ul className="flex flex-col gap-3">
                                         <li className="flex gap-2 items-center">
-                                            <div className="bg-blue-100 w-5 h-5 rounded-full flex items-center justify-center">
-                                                <FiCheck size={14} className="text-blue-500" />
+                                            <div className="bg-indigo-100 w-5 h-5 rounded-full flex items-center justify-center">
+                                                <FiCheck size={14} className="text-indigo-500" />
                                             </div>
                                             <span className="text-xs">Ar Condicionado</span>
                                         </li>
                                         <li className="flex gap-2 items-center">
-                                            <div className="bg-blue-100 w-5 h-5 rounded-full flex items-center justify-center">
-                                                <FiCheck size={14} className="text-blue-500" />
+                                            <div className="bg-indigo-100 w-5 h-5 rounded-full flex items-center justify-center">
+                                                <FiCheck size={14} className="text-indigo-500" />
                                             </div>
                                             <span className="text-xs">Odômetro digital</span>
                                         </li>
                                         <li className="flex gap-2 items-center">
-                                            <div className="bg-blue-100 w-5 h-5 rounded-full flex items-center justify-center">
-                                                <FiCheck size={14} className="text-blue-500" />
+                                            <div className="bg-indigo-100 w-5 h-5 rounded-full flex items-center justify-center">
+                                                <FiCheck size={14} className="text-indigo-500" />
                                             </div>
                                             <span className="text-xs">Aquecedor</span>
                                         </li>
                                         <li className="flex gap-2 items-center">
-                                            <div className="bg-blue-100 w-5 h-5 rounded-full flex items-center justify-center">
-                                                <FiCheck size={14} className="text-blue-500" />
+                                            <div className="bg-indigo-100 w-5 h-5 rounded-full flex items-center justify-center">
+                                                <FiCheck size={14} className="text-indigo-500" />
                                             </div>
                                             <span className="text-xs">Assentos de couro</span>
                                         </li>
                                         <li className="flex gap-2 items-center">
-                                            <div className="bg-blue-100 w-5 h-5 rounded-full flex items-center justify-center">
-                                                <FiCheck size={14} className="text-blue-500" />
+                                            <div className="bg-indigo-100 w-5 h-5 rounded-full flex items-center justify-center">
+                                                <FiCheck size={14} className="text-indigo-500" />
                                             </div>
                                             <span className="text-xs">Teto solar panorâmico</span>
                                         </li>
                                         <li className="flex gap-2 items-center">
-                                            <div className="bg-blue-100 w-5 h-5 rounded-full flex items-center justify-center">
-                                                <FiCheck size={14} className="text-blue-500" />
+                                            <div className="bg-indigo-100 w-5 h-5 rounded-full flex items-center justify-center">
+                                                <FiCheck size={14} className="text-indigo-500" />
                                             </div>
                                             <span className="text-xs">Tacômetro</span>
                                         </li>
@@ -220,38 +220,38 @@ export default function Page() {
                                     <h4 className="text-sm font-medium">Exterior</h4>
                                     <ul className="flex flex-col gap-3">
                                         <li className="flex gap-2 items-center">
-                                            <div className="bg-blue-100 w-5 h-5 rounded-full flex items-center justify-center">
-                                                <FiCheck size={14} className="text-blue-500" />
+                                            <div className="bg-indigo-100 w-5 h-5 rounded-full flex items-center justify-center">
+                                                <FiCheck size={14} className="text-indigo-500" />
                                             </div>
                                             <span className="text-xs">Ar Condicionado</span>
                                         </li>
                                         <li className="flex gap-2 items-center">
-                                            <div className="bg-blue-100 w-5 h-5 rounded-full flex items-center justify-center">
-                                                <FiCheck size={14} className="text-blue-500" />
+                                            <div className="bg-indigo-100 w-5 h-5 rounded-full flex items-center justify-center">
+                                                <FiCheck size={14} className="text-indigo-500" />
                                             </div>
                                             <span className="text-xs">Odômetro digital</span>
                                         </li>
                                         <li className="flex gap-2 items-center">
-                                            <div className="bg-blue-100 w-5 h-5 rounded-full flex items-center justify-center">
-                                                <FiCheck size={14} className="text-blue-500" />
+                                            <div className="bg-indigo-100 w-5 h-5 rounded-full flex items-center justify-center">
+                                                <FiCheck size={14} className="text-indigo-500" />
                                             </div>
                                             <span className="text-xs">Aquecedor</span>
                                         </li>
                                         <li className="flex gap-2 items-center">
-                                            <div className="bg-blue-100 w-5 h-5 rounded-full flex items-center justify-center">
-                                                <FiCheck size={14} className="text-blue-500" />
+                                            <div className="bg-indigo-100 w-5 h-5 rounded-full flex items-center justify-center">
+                                                <FiCheck size={14} className="text-indigo-500" />
                                             </div>
                                             <span className="text-xs">Assentos de couro</span>
                                         </li>
                                         <li className="flex gap-2 items-center">
-                                            <div className="bg-blue-100 w-5 h-5 rounded-full flex items-center justify-center">
-                                                <FiCheck size={14} className="text-blue-500" />
+                                            <div className="bg-indigo-100 w-5 h-5 rounded-full flex items-center justify-center">
+                                                <FiCheck size={14} className="text-indigo-500" />
                                             </div>
                                             <span className="text-xs">Teto solar panorâmico</span>
                                         </li>
                                         <li className="flex gap-2 items-center">
-                                            <div className="bg-blue-100 w-5 h-5 rounded-full flex items-center justify-center">
-                                                <FiCheck size={14} className="text-blue-500" />
+                                            <div className="bg-indigo-100 w-5 h-5 rounded-full flex items-center justify-center">
+                                                <FiCheck size={14} className="text-indigo-500" />
                                             </div>
                                             <span className="text-xs">Tacômetro</span>
                                         </li>
@@ -261,38 +261,38 @@ export default function Page() {
                                     <h4 className="text-sm font-medium">Conforto & Conveniência</h4>
                                     <ul className="flex flex-col gap-3">
                                         <li className="flex gap-2 items-center">
-                                            <div className="bg-blue-100 w-5 h-5 rounded-full flex items-center justify-center">
-                                                <FiCheck size={14} className="text-blue-500" />
+                                            <div className="bg-indigo-100 w-5 h-5 rounded-full flex items-center justify-center">
+                                                <FiCheck size={14} className="text-indigo-500" />
                                             </div>
                                             <span className="text-xs">Ar Condicionado</span>
                                         </li>
                                         <li className="flex gap-2 items-center">
-                                            <div className="bg-blue-100 w-5 h-5 rounded-full flex items-center justify-center">
-                                                <FiCheck size={14} className="text-blue-500" />
+                                            <div className="bg-indigo-100 w-5 h-5 rounded-full flex items-center justify-center">
+                                                <FiCheck size={14} className="text-indigo-500" />
                                             </div>
                                             <span className="text-xs">Odômetro digital</span>
                                         </li>
                                         <li className="flex gap-2 items-center">
-                                            <div className="bg-blue-100 w-5 h-5 rounded-full flex items-center justify-center">
-                                                <FiCheck size={14} className="text-blue-500" />
+                                            <div className="bg-indigo-100 w-5 h-5 rounded-full flex items-center justify-center">
+                                                <FiCheck size={14} className="text-indigo-500" />
                                             </div>
                                             <span className="text-xs">Aquecedor</span>
                                         </li>
                                         <li className="flex gap-2 items-center">
-                                            <div className="bg-blue-100 w-5 h-5 rounded-full flex items-center justify-center">
-                                                <FiCheck size={14} className="text-blue-500" />
+                                            <div className="bg-indigo-100 w-5 h-5 rounded-full flex items-center justify-center">
+                                                <FiCheck size={14} className="text-indigo-500" />
                                             </div>
                                             <span className="text-xs">Assentos de couro</span>
                                         </li>
                                         <li className="flex gap-2 items-center">
-                                            <div className="bg-blue-100 w-5 h-5 rounded-full flex items-center justify-center">
-                                                <FiCheck size={14} className="text-blue-500" />
+                                            <div className="bg-indigo-100 w-5 h-5 rounded-full flex items-center justify-center">
+                                                <FiCheck size={14} className="text-indigo-500" />
                                             </div>
                                             <span className="text-xs">Teto solar panorâmico</span>
                                         </li>
                                         <li className="flex gap-2 items-center">
-                                            <div className="bg-blue-100 w-5 h-5 rounded-full flex items-center justify-center">
-                                                <FiCheck size={14} className="text-blue-500" />
+                                            <div className="bg-indigo-100 w-5 h-5 rounded-full flex items-center justify-center">
+                                                <FiCheck size={14} className="text-indigo-500" />
                                             </div>
                                             <span className="text-xs">Tacômetro</span>
                                         </li>
@@ -312,15 +312,16 @@ export default function Page() {
                             </div>
                             <div className="flex items-center gap-4 mt-2">
                                 <span className="line-through text-sm">R$ 64.000</span>
-                                <span className="text-xl text-blue-500 font-semibold">R$ 56.000</span>
+                                <span className="text-xl text-indigo-500 font-semibold">R$ 56.000</span>
                             </div>
                             <div className="flex flex-col gap-4 mt-6">
                                 <Button title="Faça uma oferta" buttonType="primary" full icon={<FiTag />} />
                                 <Button title="Faça uma oferta" buttonType="outlined" full icon={<Image src={'/drive.svg'} alt="" width={20} height={20} />} />
                             </div>
                             <div className="flex gap-2 my-6">
-                                <div className="w-16 h-16 border border-gray-600 rounded-full flex items-center justify-center">
-                                    <FiImage />
+                                <div className="w-16 h-16 border-gray-600 rounded-full flex items-center justify-center relative overflow-hidden">
+                                   {/*  <FiImage /> */}
+                                   <Image src={'/avatar.avif'} alt="" fill objectFit="cover"/>
                                 </div>
                                 <div className="flex justify-center flex-col">
                                     <span className="font-medium">Ezequiel Pires</span>

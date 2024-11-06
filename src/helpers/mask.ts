@@ -1,0 +1,1 @@
+export const toNumber = (str: string) => str && Number(str.replaceAll(/[^0-9]/g, ''));
