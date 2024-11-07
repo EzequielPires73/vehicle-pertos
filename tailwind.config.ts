@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'gradient-custom': 'linear-gradient(135deg, #0072ff, #9e00ff)',
+        'gradient': 'linear-gradient(45deg, #0072ff, #9e00ff)',
+      },
       colors: {
         section: "#050B20",
         card: "#050B20",

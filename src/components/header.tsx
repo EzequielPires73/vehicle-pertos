@@ -1,11 +1,14 @@
 'use client'
 
+import { useAuth } from "@/contexts/auth-context";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FiMenu } from "react-icons/fi";
+import { UserWrapper } from "./user-wrapper";
 
 export function Header({fill}: {fill?: boolean}) {
+    const {user} = useAuth();
     const [isTop, setIsTop] = useState(true);
 
     useEffect(() => {
@@ -37,10 +40,10 @@ export function Header({fill}: {fill?: boolean}) {
                         <li><Link href={'/'} className="font-semibold">Início</Link></li>
                         <li><Link href={'/'} className={`${isTop || fill ? 'text-white/80' : 'text-black/80'}`}>Sobre</Link></li>
                         <li><Link href={'/'} className={`${isTop || fill ? 'text-white/80' : 'text-black/80'}`}>Contato</Link></li>
-                        <div className="ml-12 flex items-center gap-4">
+                        {user ? <UserWrapper />: <div className="ml-12 flex items-center gap-4">
                             <li><Link href={'/entrar'}>Entrar</Link></li>
                             <li><Link href={'/anunciar-veiculo'} className={`px-6 ${isTop || fill ? 'bg-white hover:bg-white/90' : 'bg-indigo-500 text-white'} transition-all text-black h-12 flex items-center rounded-xl font-medium`}>Anunciar veículo</Link></li>
-                        </div>
+                        </div>}
                     </ul>
                 </nav>
             </header>

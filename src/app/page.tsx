@@ -15,7 +15,7 @@ import { IVehicle } from "@/interfaces/vehicle.interface";
 
 export default async function Home() {
   const { data: brands }: { data: IBrand[], total: number } = await fetchData('brands');
-  const { data: vehicles, total }: { data: IVehicle[], total: number } = await fetchData('vehicles');
+  const { data: vehicles, total }: { data: IVehicle[], total: number } = await fetchData('vehicles', 0);
 
   return (
     <div>
@@ -47,7 +47,7 @@ export default async function Home() {
           </div>
         </div>
       </div>
-      <ListPopularMakes />
+      <ListPopularMakes vehicles={vehicles} />
       <ListBrands />
       <div className="w-full max-w-7xl mx-auto px-4 pt-16 pb-8 grid lg:grid-cols-2 gap-4">
         <div className="flex-1 bg-blue-100 rounded-xl p-6 flex gap-4 items-start ">

@@ -4,6 +4,9 @@ const nextConfig = {
         remotePatterns: [
             {
                 hostname: 'cdn.motor1.com'
+            },
+            {
+                hostname: 'localhost'
             }
         ]
     }

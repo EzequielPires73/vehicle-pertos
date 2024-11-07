@@ -11,8 +11,12 @@ import { ButtonIcon } from "@/components/ui/button-icon";
 import { Footer } from "@/components/footer";
 import { FaWhatsapp } from "react-icons/fa";
 import { ListVehicles } from "@/components/list-vehicles";
+import { IVehicle } from "@/interfaces/vehicle.interface";
+import { fetchData } from "@/hooks/fetch";
 
-export default function Page() {
+export default async function Page() {
+    const { data: vehicles, total }: { data: IVehicle[], total: number } = await fetchData('vehicles', 0);
+
     return (
         <div className="flex flex-col">
             <Header fill />
@@ -320,8 +324,8 @@ export default function Page() {
                             </div>
                             <div className="flex gap-2 my-6">
                                 <div className="w-16 h-16 border-gray-600 rounded-full flex items-center justify-center relative overflow-hidden">
-                                   {/*  <FiImage /> */}
-                                   <Image src={'/avatar.avif'} alt="" fill objectFit="cover"/>
+                                    {/*  <FiImage /> */}
+                                    <Image src={'/avatar.avif'} alt="" fill objectFit="cover" />
                                 </div>
                                 <div className="flex justify-center flex-col">
                                     <span className="font-medium">Ezequiel Pires</span>
@@ -333,7 +337,7 @@ export default function Page() {
                     </div>
                 </div>
             </div>
-            <ListVehicles />
+            <ListVehicles vehicles={vehicles} />
             <Footer />
         </div>
     )
