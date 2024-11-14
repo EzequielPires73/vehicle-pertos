@@ -2,11 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { FiSearch } from "react-icons/fi";
-import { SelectField } from "./ui/select";
-import { useForm } from "react-hook-form";
-import { useEffect, useState } from "react";
-import { IModel } from "@/interfaces/model.interface";
 import { IBrand } from "@/interfaces/brand.interface";
 import { FilterForm } from "./forms/filter-form";
 
