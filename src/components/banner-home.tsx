@@ -12,9 +12,9 @@ import { FilterForm } from "./forms/filter-form";
 
 export function BannerHome({ brands }: {brands: IBrand[]}) {
     return (
-        <div className="relative w-full h-screen">
-            <Image src={'/bg-home.jpg'} alt="" fill objectFit="cover" />
-            <div className="bg-black/60 absolute top-0 left-0 w-full h-full flex flex-col text-white items-center justify-center gap-4 px-4">
+        <div className="relative w-full xl:h-screen">
+            <Image src={'/bg-home.jpg'} alt="" fill objectFit="cover" className="max-xl:hidden" />
+            <div className="xl:bg-black/60 bg-gray-900 xl:absolute py-20 top-0 left-0 w-full h-full flex flex-col text-white items-center justify-center gap-4 px-4">
                 <p className="hidden xl:text-xl text-center">Encontre carros para venda e aluguel perto de você</p>
                 <h1 className="text-2xl xl:text-5xl text-center font-medium">Encontre o seu carro perfeito</h1>
                 <FilterForm brands={brands}/>
