@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FiArrowUpRight } from "react-icons/fi";
+import { FiArrowUpRight, FiHeart, FiHome, FiSearch, FiUser } from "react-icons/fi";
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { ListVehicles } from "@/components/list-vehicles";
@@ -12,6 +12,7 @@ import { Footer } from "@/components/footer";
 import { fetchData } from "@/hooks/fetch";
 import { IBrand } from "@/interfaces/brand.interface";
 import { IVehicle } from "@/interfaces/vehicle.interface";
+import { BottomBar } from "@/components/bottom-bar";
 
 export default async function Home() {
   const { data: brands }: { data: IBrand[], total: number } = await fetchData('brands');
@@ -21,27 +22,27 @@ export default async function Home() {
     <div>
       <Header />
       <BannerHome brands={brands} />
-      <ListVehicles vehicles={vehicles}/>
+      <ListVehicles vehicles={vehicles} />
       <div className="w-full mx-auto px-4 py-8 gap-6 flex flex-col">
         <h2 className="text-xl font-medium flex-1">Por que nos escolher?</h2>
         <div className="w-full grid xl:grid-cols-4 gap-4">
           <div className="flex flex-col gap-1">
-            <Image src={'/f1.svg'} alt="" width={48} height={48}/>
+            <Image src={'/f1.svg'} alt="" width={48} height={48} />
             <h4 className="font-medium text-lg">Ofertas Especiais de Financiamento</h4>
             <p className="text-sm">Our stress-free finance department that can find financial solutions to save you money.</p>
           </div>
           <div className="flex flex-col gap-1">
-            <Image src={'/f2.svg'} alt="" width={48} height={48}/>
+            <Image src={'/f2.svg'} alt="" width={48} height={48} />
             <h4 className="font-medium text-lg">Concessionárias de automóveis confiáveis</h4>
             <p className="text-sm">Our stress-free finance department that can find financial solutions to save you money.</p>
           </div>
           <div className="flex flex-col gap-1">
-            <Image src={'/f3.svg'} alt="" width={48} height={48}/>
+            <Image src={'/f3.svg'} alt="" width={48} height={48} />
             <h4 className="font-medium text-lg">Preços transparentes e competitivos</h4>
             <p className="text-sm">Our stress-free finance department that can find financial solutions to save you money.</p>
           </div>
           <div className="flex flex-col gap-1">
-            <Image src={'/f4.svg'} alt="" width={48} height={48}/>
+            <Image src={'/f4.svg'} alt="" width={48} height={48} />
             <h4 className="font-medium text-lg">Serviço especializado em automóveis</h4>
             <p className="text-sm">Our stress-free finance department that can find financial solutions to save you money.</p>
           </div>
@@ -68,6 +69,7 @@ export default async function Home() {
         </div>
       </div>
       <Footer />
+      <BottomBar />
     </div>
   );
 }

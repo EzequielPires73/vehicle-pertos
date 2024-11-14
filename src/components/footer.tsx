@@ -4,7 +4,7 @@ import { FiFacebook, FiInstagram, FiYoutube } from "react-icons/fi";
 
 export function Footer() {
   return (
-    <footer className="mt-8 bg-section pt-8 px-4 pb-4">
+    <footer className="max-xl:hidden mt-8 bg-section pt-8 px-4 pb-4">
       <div className="mb-10 border-b border-white/20 pb-4">
         <div className="flex flex-col gap-2">
           <Image src={'/logo.svg'} alt="Logo" width={300} height={26} />

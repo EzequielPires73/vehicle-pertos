@@ -7,6 +7,9 @@ const nextConfig = {
             },
             {
                 hostname: 'localhost'
+            },
+            {
+                hostname: '192.168.0.106'
             }
         ]
     }

@@ -182,7 +182,7 @@ export function CreateVehicleForm({ brands, options, step, vehicle, id, }: { id?
             {step == "finalizar" && <VehicleGallery images={images} onChange={(images) => setValue('images', images)} />}
             {step}
             {step == "detalhes" || step == null ? <>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid lg:grid-cols-2 gap-4">
                     <SelectField
                         control={control}
                         label="Marca"
@@ -233,7 +233,7 @@ export function CreateVehicleForm({ brands, options, step, vehicle, id, }: { id?
                         rules={{ required: 'Esse campo é obrigatório.' }}
                     />
                 </div>
-                <div className="flex gap-4">
+                <div className="grid lg:grid-cols-2 gap-4">
                     <div className="flex-1">
                         <SelectField
                             control={control}
@@ -257,7 +257,7 @@ export function CreateVehicleForm({ brands, options, step, vehicle, id, }: { id?
                         />
                     </div>
                 </div>
-                <div className="flex gap-4">
+                <div className="grid lg:grid-cols-2 gap-4">
                     <div className="flex-1">
                         <SelectField
                             control={control}
@@ -281,7 +281,7 @@ export function CreateVehicleForm({ brands, options, step, vehicle, id, }: { id?
                         />
                     </div>
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid lg:grid-cols-2 gap-4">
                         <SelectField
                             control={control}
                             name="direction"

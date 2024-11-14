@@ -22,7 +22,7 @@ export default async function Page({ params: { id } }) {
     return (
         <div className="flex flex-col">
             <Header fill />
-            <div className="min-xl:hidden">
+            <div className="xl:hidden">
                 <Gallery images={vehicle.images} />
             </div>
             <div className="w-full max-w-7xl px-4 mx-auto pt-4 xl:pt-28">

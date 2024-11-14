@@ -13,7 +13,7 @@ export default async function Page() {
     
     return (
         <div>
-            <div className="w-full mx-auto px-4  py-8 flex flex-col gap-4">
+            <div className="w-full mx-auto px-4 py-8 flex flex-col gap-4">
                 <div className="flex items-center justify-between">
                     <div>
                         <Title>Meus anúncios</Title>
@@ -21,7 +21,7 @@ export default async function Page() {
                     </div>
                     <Button title="Anunciar" buttonType="primary" href="/anunciar-veiculo"/>
                 </div>
-                <div className="grid grid-cols-4 gap-4">
+                <div className="grid xl:grid-cols-4 gap-4">
                     {vehicles?.map(item => <CardVehicleAdmin key={item.id} vehicle={item} />)}
                 </div>
             </div>

@@ -70,7 +70,7 @@ interface SortableImageListProps {
 
 const SortableImageList = SortableContainer<SortableImageListProps>(({ images }) => {
     return (
-        <div className="grid grid-cols-4 gap-2">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
             {images.map((image, index) => (
                 <SortableImage key={index} index={index} image={image} />
             ))}

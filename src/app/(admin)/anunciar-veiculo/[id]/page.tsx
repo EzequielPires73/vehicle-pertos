@@ -11,7 +11,7 @@ export default async function Page({ params: { id }, searchParams: {step} }: { p
 
     return (
         <div>
-            <div className="w-full max-w-6xl mx-auto my-8 p-8 border rounded-xl flex flex-col items-center gap-4 bg-white">
+            <div className="w-full max-w-6xl mx-auto xl:my-8 p-4 xl:p-8 xl:border xl:rounded-xl flex flex-col items-center gap-4 bg-white">
                 <Step />
                 <h1 className="text-2xl font-medium text-gray-800 mt-8">Preencha os dados do veículo</h1>
                 <CreateVehicleForm vehicle={vehicle} brands={brands} options={options} step={step} id={+id} />

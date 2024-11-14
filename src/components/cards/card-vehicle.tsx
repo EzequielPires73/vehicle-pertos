@@ -18,7 +18,7 @@ export function CardVehicle({ vehicle }: { vehicle: IVehicle }) {
           <h4 className="font-medium">{vehicle.brand.name} {vehicle.model.name} - {vehicle.modelYear}</h4>
           <span className="text-xs line-clamp-1">{vehicle.version}</span>
           <div className="mt-3 pt-3 border-t grid grid-cols-3">
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-start">
               <Image src={"/mileage.svg"} alt="" width={16} height={16} />
               <span className="text-xs mt-1 line-clamp-1 text-center">{vehicle.mileage} KM</span>
             </div>
@@ -26,7 +26,7 @@ export function CardVehicle({ vehicle }: { vehicle: IVehicle }) {
               <Image src={"/fuel.svg"} alt="" width={16} height={16} />
               <span className="text-xs mt-1 line-clamp-1 text-center">{vehicle.fuelType}</span>
             </div>
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-end">
               <Image src={"/cambio.svg"} alt="" width={16} height={16} />
               <span className="text-xs mt-1 line-clamp-1 text-center">{vehicle.transmissionType}</span>
             </div>
