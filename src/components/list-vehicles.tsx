@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { CardVehicle } from "./card-vehicle"
+import { CardVehicle } from "./cards/card-vehicle"
 import { IVehicle } from "@/interfaces/vehicle.interface"
 
 const vehicles = [
@@ -46,7 +46,7 @@ const vehicles = [
 export function ListVehicles({vehicles}: {vehicles: IVehicle[]}) {
     return (
         <div className="overflow-hidden">
-            <div className="w-full  mx-auto px-4 pt-16 pb-8 flex flex-col gap-4">
+            <div className="w-full  mx-auto px-4 pt-8 xl:pt-16 pb-8 flex flex-col gap-4">
                 <div className="flex justify-between items-center">
                     <h2 className="text-xl font-medium flex-1">Explorar todos os veículos</h2>
                     <Link className="text-sm font-medium" href={'/'}>Ver todos</Link>
@@ -57,7 +57,7 @@ export function ListVehicles({vehicles}: {vehicles: IVehicle[]}) {
                     <button className="px-2 py-1 text-sm border-b-2 border-transparent">Usados</button>
                 </div>
                 <Swiper className="w-full overflow-visible" slidesPerView={'auto'}>
-                    {vehicles.map(item => <SwiperSlide className="max-w-80"><CardVehicle vehicle={item} /></SwiperSlide>)}
+                    {vehicles.map(item => <SwiperSlide className="max-w-80" key={item.id}><CardVehicle vehicle={item} /></SwiperSlide>)}
                 </Swiper>
             </div>
         </div>

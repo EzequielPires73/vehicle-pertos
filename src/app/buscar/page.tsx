@@ -1,4 +1,4 @@
-import { CardVehicle } from "@/components/card-vehicle";
+import { CardVehicle } from "@/components/cards/card-vehicle";
 import { Footer } from "@/components/footer";
 import { FilterForm } from "@/components/forms/filter-form";
 import { Header } from "@/components/header";

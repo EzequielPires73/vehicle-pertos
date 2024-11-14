@@ -1,5 +1,6 @@
 import { IBrand } from "./brand.interface";
 import { IModel } from "./model.interface";
+import { IUser } from "./user.interdace";
 
 export interface IVehicle {
     id?: number;
@@ -10,7 +11,12 @@ export interface IVehicle {
     version: string;
     transmissionType: string;
     sellerType?: string;
-    condition: string;
+    condition?: string;
+    engine: string;
+    doors: string;
+    direction: string;
+    cylinders: string;
+    description: string;
     optionalFeatures?: string[];
     images?: string[];
     model: IModel;
@@ -23,4 +29,5 @@ export interface IVehicle {
     exteriorFeatures: Array<String>,
     safetyFeatures: Array<String>,
     comfortFeatures: Array<String>,
+    user?: IUser;
 }

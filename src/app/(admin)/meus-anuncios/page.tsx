@@ -1,12 +1,15 @@
-import { CardVehicle } from "@/components/card-vehicle";
+import { CardVehicleAdmin } from "@/components/cards/card-vehicle-admin";
 import { Button } from "@/components/ui/button";
 import { Span } from "@/components/ui/span";
 import { Title } from "@/components/ui/title";
 import { fetchData } from "@/hooks/fetch";
 import { IVehicle } from "@/interfaces/vehicle.interface";
+import { cookies } from "next/headers";
 
 export default async function Page() {
-    const { data: vehicles, total }: { data: IVehicle[], total: number } = await fetchData('vehicles');
+    const userData = cookies().get('pertos_vehicles.user');
+    const user = JSON.parse(userData.value);
+    const { data: vehicles, total }: { data: IVehicle[], total: number } = await fetchData(`vehicles?user=${user.id}`, 0);
     
     return (
         <div>
@@ -19,7 +22,7 @@ export default async function Page() {
                     <Button title="Anunciar" buttonType="primary" href="/anunciar-veiculo"/>
                 </div>
                 <div className="grid grid-cols-4 gap-4">
-                    {vehicles.map(item => <CardVehicle vehicle={item} />)}
+                    {vehicles?.map(item => <CardVehicleAdmin key={item.id} vehicle={item} />)}
                 </div>
             </div>
         </div>

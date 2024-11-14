@@ -17,6 +17,7 @@ import axios from "axios";
 import { api } from "@/services/api";
 import { useRouter } from "next/navigation";
 import { IVehicle } from "@/interfaces/vehicle.interface";
+import { Textarea } from "../ui/textarea";
 
 interface IVehicleForm {
     category: OptionType;
@@ -35,7 +36,12 @@ interface IVehicleForm {
     exteriorFeatures: Array<String>,
     safetyFeatures: Array<String>,
     comfortFeatures: Array<String>,
+    engine: OptionType;
+    doors: OptionType;
+    direction: OptionType;
+    cylinders: OptionType;
     images: Array<String>,
+    description: string,
 }
 
 export function CreateVehicleForm({ brands, options, step, vehicle, id, }: { id?: number, vehicle?: IVehicle; brands: IBrand[], options: IVehicleOptions, step?: 'detalhes' | 'adicionais' | 'finalizar' }) {
@@ -79,6 +85,23 @@ export function CreateVehicleForm({ brands, options, step, vehicle, id, }: { id?
                 label: vehicle.condition,
                 value: vehicle.condition
             },
+            cylinders: {
+                label: vehicle.cylinders,
+                value: vehicle.cylinders,
+            },
+            direction: {
+                label: vehicle.direction,
+                value: vehicle.direction,
+            },
+            doors: {
+                label: vehicle.doors,
+                value: vehicle.doors,
+            },
+            engine: {
+                label: vehicle.engine,
+                value: vehicle.engine,
+            },
+            description: vehicle.description,
             mileage: vehicle.mileage,
             price: maskPrice(vehicle.price.toString()),
             comfortFeatures: vehicle.comfortFeatures,
@@ -117,6 +140,7 @@ export function CreateVehicleForm({ brands, options, step, vehicle, id, }: { id?
     const onSubmit = async (data: IVehicleForm) => {
         const { models, ...brand } = brands.find(item => item.id == data.brand.value);
         const vehicleData: IVehicle = {
+            description: data.description,
             brand: brand,
             model: models.find(item => item.id == data.model.value),
             category: data.category.label,
@@ -134,11 +158,15 @@ export function CreateVehicleForm({ brands, options, step, vehicle, id, }: { id?
             exteriorFeatures: data.exteriorFeatures,
             safetyFeatures: data.safetyFeatures,
             comfortFeatures: data.comfortFeatures,
+            cylinders: data.cylinders.label,
+            direction: data.direction.label,
+            doors: data.doors.label,
+            engine: data.engine.label,
         };
         if (vehicle) {
             const { success, data: vehicle } = await api.patch(`vehicles/${id}`, vehicleData).then(res => res.data);
             if (success) {
-                router.push(`/anunciar-veiculo/${vehicle.id}?step=${step == 'detalhes' ? 'adicionais' : step == 'adicionais' ? 'finalizar' : ''}`);
+                step == 'finalizar' ? router.push('/meus-anuncios') : router.push(`/anunciar-veiculo/${vehicle.id}?step=${step == 'detalhes' ? 'adicionais' : step == 'adicionais' ? 'finalizar' : ''}`);
             }
         } else {
             const { success, data: vehicle } = await api.post('vehicles', vehicleData).then(res => res.data);
@@ -150,7 +178,7 @@ export function CreateVehicleForm({ brands, options, step, vehicle, id, }: { id?
     }
 
     return (
-        <form className="w-full max-w-xl mx-auto flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
+        <form className="w-full max-w-2xl mx-auto flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
             {step == "finalizar" && <VehicleGallery images={images} onChange={(images) => setValue('images', images)} />}
             {step}
             {step == "detalhes" || step == null ? <>
@@ -204,7 +232,6 @@ export function CreateVehicleForm({ brands, options, step, vehicle, id, }: { id?
                         error={errors?.color?.message}
                         rules={{ required: 'Esse campo é obrigatório.' }}
                     />
-
                 </div>
                 <div className="flex gap-4">
                     <div className="flex-1">
@@ -254,6 +281,44 @@ export function CreateVehicleForm({ brands, options, step, vehicle, id, }: { id?
                         />
                     </div>
                 </div>
+                <div className="grid grid-cols-2 gap-4">
+                        <SelectField
+                            control={control}
+                            name="direction"
+                            label="Direção"
+                            placeholder="Selecione um valor"
+                            options={options.direction.map(item => ({ value: item, label: item }))}
+                            error={errors?.fuelType?.message}
+                            rules={{ required: 'Esse campo é obrigatório.' }}
+                        />
+                        <SelectField
+                            control={control}
+                            name="doors"
+                            label="Portas"
+                            placeholder="Selecione um valor"
+                            options={options.doors.map(item => ({ value: item, label: item }))}
+                            error={errors?.condition?.message}
+                            rules={{ required: 'Esse campo é obrigatório.' }}
+                        />
+                        <SelectField
+                            control={control}
+                            name="engine"
+                            label="Motor"
+                            placeholder="Selecione um valor"
+                            options={options.engine.map(item => ({ value: item, label: item }))}
+                            error={errors?.fuelType?.message}
+                            rules={{ required: 'Esse campo é obrigatório.' }}
+                        />
+                        <SelectField
+                            control={control}
+                            name="cylinders"
+                            label="Cilindros"
+                            placeholder="Selecione um valor"
+                            options={options.cylinders.map(item => ({ value: item, label: item }))}
+                            error={errors?.condition?.message}
+                            rules={{ required: 'Esse campo é obrigatório.' }}
+                        />
+                </div>
                 <div className="flex gap-4">
                     <div className="flex-1">
                         <Input
@@ -274,6 +339,7 @@ export function CreateVehicleForm({ brands, options, step, vehicle, id, }: { id?
                         />
                     </div>
                 </div>
+                <Textarea label="Descrição" {...register('description')} />
             </> : null}
             {step == 'adicionais' && <>
                 <GridSelect

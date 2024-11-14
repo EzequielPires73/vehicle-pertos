@@ -11,5 +11,9 @@ export interface IVehicleOptions {
     exteriorFeatures: Array<string>,
     safetyFeatures: Array<string>,
     comfortFeatures: Array<string>,
+    engine: Array<string>,
+    doors: Array<string>,
+    direction: Array<string>,
+    cylinders: Array<string>,
     years: Array<string>,
 }

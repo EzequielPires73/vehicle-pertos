@@ -24,7 +24,7 @@ export default async function Home() {
       <ListVehicles vehicles={vehicles}/>
       <div className="w-full mx-auto px-4 py-8 gap-6 flex flex-col">
         <h2 className="text-xl font-medium flex-1">Por que nos escolher?</h2>
-        <div className="w-full grid grid-cols-4 gap-4">
+        <div className="w-full grid xl:grid-cols-4 gap-4">
           <div className="flex flex-col gap-1">
             <Image src={'/f1.svg'} alt="" width={48} height={48}/>
             <h4 className="font-medium text-lg">Ofertas Especiais de Financiamento</h4>

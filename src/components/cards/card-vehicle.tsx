@@ -2,7 +2,7 @@ import { IVehicle } from "@/interfaces/vehicle.interface";
 import Image from "next/image";
 import Link from "next/link";
 import { FiArrowUpRight, FiBookmark, FiImage } from "react-icons/fi";
-import { maskPrice } from "./ui/input-price";
+import { maskPrice } from "../ui/input-price";
 
 export function CardVehicle({ vehicle }: { vehicle: IVehicle }) {
   return (

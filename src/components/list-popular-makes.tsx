@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { CardVehicleH } from "./card-vehicle-h";
+import { CardVehicleH } from "./cards/card-vehicle-h";
 import { IVehicle } from "@/interfaces/vehicle.interface";
 
 export function ListPopularMakes({vehicles}: {vehicles: IVehicle[]}) {

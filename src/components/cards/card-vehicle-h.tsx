@@ -2,7 +2,7 @@ import { IVehicle } from "@/interfaces/vehicle.interface";
 import Image from "next/image";
 import Link from "next/link";
 import { FiArrowUpRight, FiBookmark, FiImage } from "react-icons/fi";
-import { maskPrice } from "./ui/input-price";
+import { maskPrice } from "../ui/input-price";
 
 export function CardVehicleH({vehicle}: {vehicle: IVehicle}) {
     return (
@@ -31,7 +31,7 @@ export function CardVehicleH({vehicle}: {vehicle: IVehicle}) {
                 </div>
                 <div className="mt-3 pt-3 border-t border-white/10 flex justify-between items-center">
                   <strong className="text-lg font-medium">R$ {maskPrice(vehicle.price.toString())}</strong>
-                  <Link href={'/comprar/volkswagen/gol/123'} className="text-sm font-medium text-white flex items-center gap-2">Ver detalhes<FiArrowUpRight size={20} /></Link>
+                  <Link href={`/comprar/${vehicle.brand.slug}/${vehicle.model.slug}/${vehicle.id}`} className="text-xs font-medium text-white flex items-center gap-2">Ver detalhes<FiArrowUpRight size={16} /></Link>
                 </div>
               </div>
             </div>
